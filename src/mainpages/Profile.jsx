@@ -53,12 +53,15 @@ const EmotionSelect = styled.select`
     font-weight: bold;
 `
 
+
 export default function Profile() {
-  return <div>
+const now = new Date().toLocaleString()
+return <div>
 <AppHeader>
   <a type='button' href='/'>
         <MyButton> 뒤로가기 </MyButton>
   </a>
+  <span>{now}</span>
   <MyButton onClick={console.log}> 저장하기 </MyButton>
       </AppHeader>
       <div>
