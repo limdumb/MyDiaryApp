@@ -43,10 +43,10 @@ const Diarycontent = styled.textarea`
     position: absolute;
     padding: 30px 10px;
     font-size: 10px;
-    width: 400px;
-    line-height: 20px;
+    width: 491px;
+    line-height: 50px;
     justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid;
 `
 const EmotionSelect = styled.select`
     font-size : 14px;
@@ -61,7 +61,7 @@ return <div>
   <a type='button' href='/'>
         <MyButton> 뒤로가기 </MyButton>
   </a>
-  <span>{now}</span>
+  <span style={{color: 'black' ,fontWeight:'bold'}}>{now}</span>
   <MyButton onClick={console.log}> 저장하기 </MyButton>
       </AppHeader>
       <div>
