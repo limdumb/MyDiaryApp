@@ -56,12 +56,11 @@ const EmotionSelect = styled.select`
 
 
 export default function Profile() {
-const now = new Date().toLocaleString()
 const [time, setTime] = React.useState();
 
 React.useEffect(() => {
   const timer = setInterval(() => {
-    setTime(now);
+    setTime(new Date().toLocaleString());
   }, 1000);
 
   return () => {
@@ -74,7 +73,7 @@ return <div>
   <a type='button' href='/'>
         <MyButton> 뒤로가기 </MyButton>
   </a>
-  <span style={{color: 'black' ,fontWeight:'bold'}}>{now}</span>
+  <span style={{color: 'black' ,fontWeight:'bold'}}>{time}</span>
   <MyButton onClick={console.log}> 저장하기 </MyButton>
       </AppHeader>
       <div>
