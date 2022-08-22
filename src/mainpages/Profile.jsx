@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
+import { toHaveDisplayValue } from '@testing-library/jest-dom/dist/matchers';
 
 const MyButton = styled.button`
   background-color: gray
@@ -56,6 +57,18 @@ const EmotionSelect = styled.select`
 
 export default function Profile() {
 const now = new Date().toLocaleString()
+const [time, setTime] = React.useState();
+
+React.useEffect(() => {
+  const timer = setInterval(() => {
+    setTime(now);
+  }, 1000);
+
+  return () => {
+    clearInterval(timer);
+  };
+}, []);
+
 return <div>
 <AppHeader>
   <a type='button' href='/'>
