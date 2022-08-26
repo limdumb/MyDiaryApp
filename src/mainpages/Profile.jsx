@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import React from 'react';
+import smily from "../assets/smily.jpg";
 import { toHaveDisplayValue } from '@testing-library/jest-dom/dist/matchers';
+
+
 
 const MyButton = styled.button`
   background-color: gray
@@ -49,11 +52,17 @@ const Diarycontent = styled.textarea`
     justify-content: center;
     border: 1px solid;
 `
+
 const EmotionSelect = styled.select`
     font-size : 14px;
     font-weight: bold;
-`
-
+    color: #000000;
+    border: 1px solid #ffffff;
+    background-image: url(${smily});
+	background-repeat: no-repeat;
+	background-size: cover;
+    `
+    
 
 export default function Profile() {
 const [time, setTime] = React.useState();
@@ -66,9 +75,11 @@ React.useEffect(() => {
   return () => {
     clearInterval(timer);
   };
+
 }, []);
 
 return <div>
+  <link rel="icon" href="%PUBLIC_URL%/public/smily.jpg" />
 <AppHeader>
   <a type='button' href='/'>
         <MyButton> 뒤로가기 </MyButton>
@@ -83,8 +94,10 @@ return <div>
         }}>
         <SelectTitle> 제목: </SelectTitle> <InputTitle></InputTitle>
           <EmotionSelect>
-            <option key="Good" value="Good">좋음</option>
+           <option key="VaryGood" value="VaryGood">매우좋음</option>
+           <option key="Good" value="Good">좋음</option>
             <option key="Soso" value="Soso">보통</option>
+            <option key="LittleBad" value="LittleBad">조금나쁨</option>
             <option key="Bad" value="Bad">나쁨</option>
           </EmotionSelect>
         </p>
