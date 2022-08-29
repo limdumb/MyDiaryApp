@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
-import smily from "../assets/smily.jpg";
 import { toHaveDisplayValue } from '@testing-library/jest-dom/dist/matchers';
-
+import { MyEmotion } from '../Components/MyEmotion';
 
 
 const MyButton = styled.button`
@@ -58,9 +57,6 @@ const EmotionSelect = styled.select`
     font-weight: bold;
     color: #000000;
     border: 1px solid #ffffff;
-    background-image: url(${smily});
-	background-repeat: no-repeat;
-	background-size: cover;
     `
     
 
@@ -88,22 +84,23 @@ return <div>
   <MyButton onClick={console.log}> 저장하기 </MyButton>
       </AppHeader>
       <div>
-        <p style={{
+        <div style={{
           display: 'flex',
-          'justify-content': 'center',
+          justifyContent: 'center',
         }}>
         <SelectTitle> 제목: </SelectTitle> <InputTitle></InputTitle>
-          <EmotionSelect>
+          {/* <EmotionSelect>
            <option key="VaryGood" value="VaryGood">매우좋음</option>
            <option key="Good" value="Good">좋음</option>
             <option key="Soso" value="Soso">보통</option>
             <option key="LittleBad" value="LittleBad">조금나쁨</option>
             <option key="Bad" value="Bad">나쁨</option>
-          </EmotionSelect>
-        </p>
+          </EmotionSelect> */}
+        <MyEmotion></MyEmotion>
+        </div>
           <div style={{
                 display: 'flex',
-                'justify-content': 'center',
+                justifyContent: 'center',
           }}>
             <Diarycontent></Diarycontent>
           </div>
