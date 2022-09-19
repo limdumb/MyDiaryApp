@@ -22,6 +22,10 @@ const StartButten = styled.button `
   min-height: 50px;
   cursor: pointer;
 `
+const HomeContainer = styled.div `
+  display: flex;
+  justify-content: center;
+`
 
 export default function Home(){
   const [ diaries, setDiaries ] = useState([])

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import { toHaveDisplayValue } from '@testing-library/jest-dom/dist/matchers';
-import { MyEmotion } from '../Components/MyEmotion';
+import { StarRating } from '../Components/RatingStar.jsx'
 
 const MyButton = styled.button`
   background-color: gray
@@ -69,8 +68,8 @@ React.useEffect(() => {
 
 return <div>
 <AppHeader>
-  <a type='button' href='/'>
-        <MyButton> 뒤로가기 </MyButton>
+  <a href='/' style={{ textDecoration: 'none' }}>
+        <MyButton>뒤로가기</MyButton>
   </a>
   <span style={{color: 'black' ,fontWeight:'bold'}}>{time}</span>
   <MyButton onClick={console.log}> 저장하기 </MyButton>
@@ -81,7 +80,7 @@ return <div>
           justifyContent: 'center',
         }}>
         <SelectTitle> 제목: </SelectTitle> <InputTitle></InputTitle>
-        <MyEmotion></MyEmotion>
+        <StarRating></StarRating>
         </div>
           <div style={{
                 display: 'flex',

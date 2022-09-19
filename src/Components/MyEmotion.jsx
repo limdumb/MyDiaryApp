@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import SmileImage from './Happy.png'
 import React, { useState } from 'react';
 import SosoImage from './Soso.png'
@@ -11,16 +10,11 @@ export function MyEmotion() {
   const [smileImage, setSmileImage] = useState(true);
   const [badImage, setBadImage] = useState(false);
 
+
   const onOffToggle = (() => {
     setEmotion(!emotion)
   })
 
-  const changeEmotionImage = () => {
-    setSosoImage = () => {
-      onclick()
-    }
-  }
-  
 
   const renderEmotionImage = () => {
     if (emotion === true) {
